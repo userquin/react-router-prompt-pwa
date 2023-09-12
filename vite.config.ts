@@ -11,6 +11,8 @@ export default defineConfig({
         filename: 'serviceWorker.ts',
         strategies: 'injectManifest',
         registerType: 'prompt',
+        includeManifestIcons: true,
+        includeAssets: ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png'],
         manifest: {
           name: 'React PWA',
           short_name: 'ReactPWA',
