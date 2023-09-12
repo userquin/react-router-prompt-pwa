@@ -7,10 +7,13 @@ export default defineConfig({
   plugins: [
       react(),
       VitePWA({
-        srcDir: 'src',
-        filename: 'serviceWorker.ts',
-        strategies: 'injectManifest',
+        filename: 'serviceWorker.js',
         registerType: 'prompt',
+        includeManifestIcons: true,
+        includeAssets: ['favicon.ico', 'favicon.svg', 'apple-touch-icon.png'],
+        workbox: {
+            cleanupOutdatedCaches: true,
+        },
         manifest: {
           name: 'React PWA',
           short_name: 'ReactPWA',
